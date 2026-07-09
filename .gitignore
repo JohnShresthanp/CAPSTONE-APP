@@ -8,3 +8,5 @@ backend/uploads/avatars/*
 backend/uploads/posters/*
 !backend/uploads/avatars/.gitkeep
 !backend/uploads/posters/.gitkeep
+recommendation-engine/.env
+**/__pycache__/
