@@ -1,0 +1,241 @@
+user_id,archetype,preferred_genres,interaction_target
+1,horror_thriller,Horror|Thriller|Mystery|Music,37
+2,mainstream_action,Action|Thriller|Adventure|Fantasy,52
+3,classic_drama,Drama|History|War,44
+4,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Horror,46
+5,horror_thriller,Horror|Thriller|Mystery|Adventure,30
+6,classic_drama,Drama|History|War,48
+7,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,32
+8,crime_mystery,Crime|Mystery|Thriller,47
+9,classic_drama,Drama|History|War,25
+10,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,55
+11,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Thriller,44
+12,crime_mystery,Crime|Mystery|Thriller|Fantasy,34
+13,mixed_viewer,Drama|Comedy|Action,37
+14,mainstream_action,Action|Thriller|Adventure|History,56
+15,horror_thriller,Horror|Thriller|Mystery,30
+16,horror_thriller,Horror|Thriller|Mystery,31
+17,classic_drama,Drama|History|War|Crime,38
+18,mainstream_action,Action|Thriller|Adventure,56
+19,classic_drama,Drama|History|War|Western,31
+20,drama_romance,Drama|Romance,32
+21,drama_romance,Drama|Romance,57
+22,crime_mystery,Crime|Mystery|Thriller,27
+23,classic_drama,Drama|History|War|Crime,53
+24,comedy_family,Comedy|Family|Animation|Action,54
+25,crime_mystery,Crime|Mystery|Thriller,48
+26,classic_drama,Drama|History|War|Adventure,50
+27,drama_romance,Drama|Romance,23
+28,comedy_family,Comedy|Family|Animation,31
+29,horror_thriller,Horror|Thriller|Mystery|TV Movie,45
+30,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,48
+31,horror_thriller,Horror|Thriller|Mystery,34
+32,comedy_family,Comedy|Family|Animation,39
+33,comedy_family,Comedy|Family|Animation|Action,23
+34,classic_drama,Drama|History|War,35
+35,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Family,30
+36,comedy_family,Comedy|Family|Animation,37
+37,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Comedy,43
+38,crime_mystery,Crime|Mystery|Thriller|Family,52
+39,comedy_family,Comedy|Family|Animation|Fantasy,27
+40,mainstream_action,Action|Thriller|Adventure|Crime,48
+41,mixed_viewer,Drama|Comedy|Action,34
+42,mixed_viewer,Drama|Comedy|Action,33
+43,crime_mystery,Crime|Mystery|Thriller|Adventure,24
+44,crime_mystery,Crime|Mystery|Thriller,22
+45,mainstream_action,Action|Thriller|Adventure|Family,44
+46,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Family,28
+47,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,36
+48,mainstream_action,Action|Thriller|Adventure,29
+49,classic_drama,Drama|History|War,31
+50,classic_drama,Drama|History|War|Animation,47
+51,classic_drama,Drama|History|War|Adventure,34
+52,drama_romance,Drama|Romance|Western,43
+53,mainstream_action,Action|Thriller|Adventure|History,57
+54,horror_thriller,Horror|Thriller|Mystery|Music,48
+55,mixed_viewer,Drama|Comedy|Action|History,41
+56,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Mystery,53
+57,mixed_viewer,Drama|Comedy|Action|Thriller,55
+58,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Crime,54
+59,comedy_family,Comedy|Family|Animation,36
+60,classic_drama,Drama|History|War|Music,37
+61,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Comedy,54
+62,comedy_family,Comedy|Family|Animation|Western,26
+63,mainstream_action,Action|Thriller|Adventure|Romance,29
+64,comedy_family,Comedy|Family|Animation|Action,36
+65,crime_mystery,Crime|Mystery|Thriller,35
+66,drama_romance,Drama|Romance|Crime,24
+67,comedy_family,Comedy|Family|Animation|Documentary,45
+68,drama_romance,Drama|Romance|Fantasy,53
+69,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,23
+70,crime_mystery,Crime|Mystery|Thriller|Science Fiction,42
+71,drama_romance,Drama|Romance|Family,50
+72,horror_thriller,Horror|Thriller|Mystery|Comedy,50
+73,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Drama,43
+74,mainstream_action,Action|Thriller|Adventure|Family,34
+75,crime_mystery,Crime|Mystery|Thriller|Western,40
+76,comedy_family,Comedy|Family|Animation|Thriller,44
+77,classic_drama,Drama|History|War,44
+78,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,54
+79,mixed_viewer,Drama|Comedy|Action,54
+80,drama_romance,Drama|Romance,24
+81,drama_romance,Drama|Romance|Crime,52
+82,classic_drama,Drama|History|War|Action,26
+83,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,30
+84,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,37
+85,comedy_family,Comedy|Family|Animation,39
+86,crime_mystery,Crime|Mystery|Thriller,31
+87,mainstream_action,Action|Thriller|Adventure,47
+88,drama_romance,Drama|Romance,42
+89,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Thriller,48
+90,comedy_family,Comedy|Family|Animation,25
+91,comedy_family,Comedy|Family|Animation|War,35
+92,horror_thriller,Horror|Thriller|Mystery,57
+93,horror_thriller,Horror|Thriller|Mystery,30
+94,drama_romance,Drama|Romance,54
+95,horror_thriller,Horror|Thriller|Mystery,45
+96,mainstream_action,Action|Thriller|Adventure|Comedy,53
+97,classic_drama,Drama|History|War,50
+98,classic_drama,Drama|History|War,27
+99,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,50
+100,crime_mystery,Crime|Mystery|Thriller,48
+101,mainstream_action,Action|Thriller|Adventure,41
+102,horror_thriller,Horror|Thriller|Mystery|Science Fiction,38
+103,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,47
+104,horror_thriller,Horror|Thriller|Mystery|Drama,32
+105,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,22
+106,mixed_viewer,Drama|Comedy|Action,41
+107,horror_thriller,Horror|Thriller|Mystery,42
+108,drama_romance,Drama|Romance|Documentary,54
+109,mixed_viewer,Drama|Comedy|Action|War,31
+110,horror_thriller,Horror|Thriller|Mystery|Romance,54
+111,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Action,50
+112,drama_romance,Drama|Romance,35
+113,mixed_viewer,Drama|Comedy|Action|Crime,27
+114,crime_mystery,Crime|Mystery|Thriller,40
+115,mainstream_action,Action|Thriller|Adventure,52
+116,classic_drama,Drama|History|War|Documentary,28
+117,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Horror,44
+118,drama_romance,Drama|Romance,43
+119,crime_mystery,Crime|Mystery|Thriller,34
+120,crime_mystery,Crime|Mystery|Thriller,35
+121,mainstream_action,Action|Thriller|Adventure|Mystery,27
+122,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,28
+123,mainstream_action,Action|Thriller|Adventure,25
+124,mixed_viewer,Drama|Comedy|Action,45
+125,horror_thriller,Horror|Thriller|Mystery,23
+126,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,32
+127,crime_mystery,Crime|Mystery|Thriller|Horror,34
+128,horror_thriller,Horror|Thriller|Mystery,50
+129,crime_mystery,Crime|Mystery|Thriller,55
+130,comedy_family,Comedy|Family|Animation,50
+131,crime_mystery,Crime|Mystery|Thriller,42
+132,mixed_viewer,Drama|Comedy|Action|Western,44
+133,mixed_viewer,Drama|Comedy|Action,56
+134,horror_thriller,Horror|Thriller|Mystery,38
+135,drama_romance,Drama|Romance,51
+136,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,23
+137,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|War,38
+138,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Drama,47
+139,mixed_viewer,Drama|Comedy|Action,43
+140,drama_romance,Drama|Romance|Comedy,56
+141,comedy_family,Comedy|Family|Animation|Science Fiction,25
+142,classic_drama,Drama|History|War,35
+143,comedy_family,Comedy|Family|Animation|Drama,41
+144,classic_drama,Drama|History|War,42
+145,crime_mystery,Crime|Mystery|Thriller|History,30
+146,horror_thriller,Horror|Thriller|Mystery|Animation,32
+147,drama_romance,Drama|Romance,57
+148,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,38
+149,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,48
+150,mixed_viewer,Drama|Comedy|Action,43
+151,comedy_family,Comedy|Family|Animation,50
+152,drama_romance,Drama|Romance|Crime,50
+153,mixed_viewer,Drama|Comedy|Action,41
+154,mainstream_action,Action|Thriller|Adventure|History,56
+155,mainstream_action,Action|Thriller|Adventure,39
+156,drama_romance,Drama|Romance|Animation,49
+157,comedy_family,Comedy|Family|Animation,31
+158,mainstream_action,Action|Thriller|Adventure|Mystery,56
+159,classic_drama,Drama|History|War,30
+160,horror_thriller,Horror|Thriller|Mystery,28
+161,comedy_family,Comedy|Family|Animation|Action,47
+162,crime_mystery,Crime|Mystery|Thriller,32
+163,horror_thriller,Horror|Thriller|Mystery|Music,51
+164,comedy_family,Comedy|Family|Animation,27
+165,comedy_family,Comedy|Family|Animation|Drama,42
+166,horror_thriller,Horror|Thriller|Mystery|History,33
+167,drama_romance,Drama|Romance,47
+168,comedy_family,Comedy|Family|Animation|Crime,55
+169,mainstream_action,Action|Thriller|Adventure,34
+170,mixed_viewer,Drama|Comedy|Action,50
+171,comedy_family,Comedy|Family|Animation|Thriller,51
+172,mixed_viewer,Drama|Comedy|Action|TV Movie,41
+173,drama_romance,Drama|Romance,47
+174,crime_mystery,Crime|Mystery|Thriller,23
+175,classic_drama,Drama|History|War,46
+176,mixed_viewer,Drama|Comedy|Action|Documentary,52
+177,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|TV Movie,55
+178,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,41
+179,crime_mystery,Crime|Mystery|Thriller,31
+180,mainstream_action,Action|Thriller|Adventure|Romance,27
+181,classic_drama,Drama|History|War,29
+182,horror_thriller,Horror|Thriller|Mystery|History,38
+183,mixed_viewer,Drama|Comedy|Action|Adventure,50
+184,horror_thriller,Horror|Thriller|Mystery|Western,27
+185,mainstream_action,Action|Thriller|Adventure|Western,46
+186,mixed_viewer,Drama|Comedy|Action|Western,31
+187,classic_drama,Drama|History|War|Comedy,23
+188,comedy_family,Comedy|Family|Animation,23
+189,horror_thriller,Horror|Thriller|Mystery,48
+190,drama_romance,Drama|Romance,37
+191,crime_mystery,Crime|Mystery|Thriller,38
+192,sci_fi_fantasy,Science Fiction|Fantasy|Adventure|Family,28
+193,comedy_family,Comedy|Family|Animation,25
+194,mainstream_action,Action|Thriller|Adventure,36
+195,classic_drama,Drama|History|War|Horror,45
+196,drama_romance,Drama|Romance,45
+197,horror_thriller,Horror|Thriller|Mystery,47
+198,horror_thriller,Horror|Thriller|Mystery|War,23
+199,mixed_viewer,Drama|Comedy|Action,30
+200,classic_drama,Drama|History|War,34
+201,horror_thriller,Horror|Thriller|Mystery,23
+202,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,50
+203,mainstream_action,Action|Thriller|Adventure,35
+204,crime_mystery,Crime|Mystery|Thriller|Fantasy,23
+205,horror_thriller,Horror|Thriller|Mystery|Western,35
+206,mixed_viewer,Drama|Comedy|Action|Fantasy,44
+207,mainstream_action,Action|Thriller|Adventure,34
+208,crime_mystery,Crime|Mystery|Thriller,48
+209,mixed_viewer,Drama|Comedy|Action|Romance,37
+210,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,42
+211,mixed_viewer,Drama|Comedy|Action|Western,22
+212,classic_drama,Drama|History|War|Western,53
+213,comedy_family,Comedy|Family|Animation|Thriller,33
+214,horror_thriller,Horror|Thriller|Mystery,37
+215,mixed_viewer,Drama|Comedy|Action|Fantasy,35
+216,drama_romance,Drama|Romance|Family,27
+217,horror_thriller,Horror|Thriller|Mystery,47
+218,comedy_family,Comedy|Family|Animation,52
+219,comedy_family,Comedy|Family|Animation,30
+220,horror_thriller,Horror|Thriller|Mystery|War,47
+221,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,31
+222,crime_mystery,Crime|Mystery|Thriller|Animation,34
+223,mainstream_action,Action|Thriller|Adventure,29
+224,mixed_viewer,Drama|Comedy|Action,39
+225,horror_thriller,Horror|Thriller|Mystery|TV Movie,57
+226,comedy_family,Comedy|Family|Animation|Music,43
+227,horror_thriller,Horror|Thriller|Mystery,33
+228,crime_mystery,Crime|Mystery|Thriller|History,53
+229,sci_fi_fantasy,Science Fiction|Fantasy|Adventure,49
+230,horror_thriller,Horror|Thriller|Mystery|Drama,56
+231,classic_drama,Drama|History|War|Fantasy,40
+232,crime_mystery,Crime|Mystery|Thriller|History,22
+233,classic_drama,Drama|History|War,57
+234,mixed_viewer,Drama|Comedy|Action,41
+235,comedy_family,Comedy|Family|Animation,27
+236,horror_thriller,Horror|Thriller|Mystery,23
+237,comedy_family,Comedy|Family|Animation,50
+238,horror_thriller,Horror|Thriller|Mystery,42
+239,mainstream_action,Action|Thriller|Adventure,36
+240,drama_romance,Drama|Romance|Mystery,48
