@@ -1,0 +1,276 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                           Int            @id @default(autoincrement())
+  username                     String         @unique @db.VarChar(50)
+  email                        String         @unique @db.VarChar(255)
+  password                     String?        @db.Text
+  role                         String         @default("user") @db.VarChar(20)
+  avatar_url                   String?        @db.Text
+  auth_provider                String?        @default("local") @db.VarChar(30)
+  provider_id                  String?        @db.VarChar(255)
+  is_email_verified            Boolean        @default(false)
+  email_verification_token     String?        @db.Text
+  email_verification_expires   DateTime?      @db.Timestamptz(6)
+  reset_password_token         String?        @db.Text
+  reset_password_expires       DateTime?      @db.Timestamptz(6)
+  is_active                    Boolean        @default(true)
+  last_login_at                DateTime?      @db.Timestamptz(6)
+  created_at                   DateTime       @default(now()) @db.Timestamptz(6)
+  updated_at                   DateTime       @default(now()) @updatedAt @db.Timestamptz(6)
+  roleAuditLogs                RoleAuditLog[] @relation("RoleAuditUser")
+  changedRoleAuditLogs         RoleAuditLog[] @relation("RoleAuditChangedBy")
+  createdMovies                Movie[]        @relation("MovieCreatedBy")
+  reviews                      Review[]
+  reviewLikes                  ReviewLike[]
+  reviewComments               ReviewComment[]
+  lists                        List[]
+  following                    Follow[]       @relation("Following")
+  followers                    Follow[]       @relation("Followers")
+  activities                   ActivityFeed[] @relation("ActivityActor")
+  bio                          String?        @db.Text
+  isBanned                     Boolean        @default(false)
+  token_version                Int            @default(0)
+  genrePreferences             String[]       @default([])
+  favorites                    Favorite[]
+
+  @@unique([auth_provider, provider_id])
+  @@index([email], map: "idx_users_email")
+  @@index([role], map: "idx_users_role")
+  @@index([reset_password_token], map: "idx_users_reset_password_token")
+  @@index([email_verification_token], map: "idx_users_email_verification_token")
+  @@map("users")
+}
+
+enum Source {
+  TMDB
+  NEPALI
+}
+
+enum CastRole {
+  DIRECTOR
+  ACTOR
+  WRITER
+}
+
+model Movie {
+  id               String             @id @default(uuid()) @db.Uuid
+  tmdbId           Int?               @unique
+  source           Source             @default(TMDB)
+  title            String
+  slug             String             @unique
+  description      String?            @db.Text
+  releaseDate      DateTime?          @db.Date
+  runtime          Int?
+  posterUrl        String?            @db.Text
+  backdropUrl      String?            @db.Text
+  imdbId           String?            @unique
+  language         String?
+  genres           String[]
+  themes           String[]           @default([])
+  culturalMetadata Json?
+  status           String?
+  tmdbRating       Float?
+  tmdbVoteCount    Int?
+  createdById      Int?
+  lastSyncedAt     DateTime?
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  createdBy        User?              @relation("MovieCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  cast             MovieCast[]
+  nepaliDetail     NepaliMovieDetail?
+  reviews          Review[]
+  listMovies       ListMovie[]
+
+  @@index([title])
+  @@index([source])
+  @@index([language])
+}
+
+model NepaliMovieDetail {
+  id              String   @id @default(uuid()) @db.Uuid
+  movieId         String   @unique @db.Uuid
+  productionHouse String?
+  distributor     String?
+  boxOfficeNpr    BigInt?
+  awards          Json?
+  extraNotes      String?  @db.Text
+  createdAt       DateTime @default(now())
+  movie           Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
+}
+
+model Person {
+  id           String      @id @default(uuid()) @db.Uuid
+  tmdbPersonId Int?        @unique
+  name         String
+  profileImage String?     @db.Text
+  biography    String?     @db.Text
+  birthday     DateTime?   @db.Date
+  createdAt    DateTime    @default(now())
+  movieCast    MovieCast[]
+
+  @@index([name])
+}
+
+model MovieCast {
+  id            String   @id @default(uuid()) @db.Uuid
+  movieId       String   @db.Uuid
+  personId      String   @db.Uuid
+  role          CastRole
+  characterName String?
+  orderIndex    Int?
+  movie         Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
+  person        Person   @relation(fields: [personId], references: [id], onDelete: Cascade)
+
+  @@unique([movieId, personId, role])
+  @@index([movieId])
+  @@index([personId])
+}
+
+model RoleAuditLog {
+  id         Int      @id @default(autoincrement())
+  user_id    Int?
+  changed_by Int?
+  old_role   String?  @db.VarChar(20)
+  new_role   String?  @db.VarChar(20)
+  changed_at DateTime @default(now()) @db.Timestamptz(6)
+  user       User?    @relation("RoleAuditUser", fields: [user_id], references: [id], onDelete: Cascade)
+  changedBy  User?    @relation("RoleAuditChangedBy", fields: [changed_by], references: [id], onDelete: SetNull)
+
+  @@index([user_id], map: "idx_role_audit_log_user_id")
+  @@index([changed_by], map: "idx_role_audit_log_changed_by")
+  @@map("role_audit_log")
+}
+
+model Review {
+  id              String          @id @default(uuid()) @db.Uuid
+  userId          Int
+  movieId         String          @db.Uuid
+  rating          Float
+  body            String?         @db.Text
+  containsSpoiler Boolean         @default(false)
+  isDeleted       Boolean         @default(false)
+  isFlagged       Boolean         @default(false)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movie           Movie           @relation(fields: [movieId], references: [id], onDelete: Cascade)
+  likes           ReviewLike[]
+  comments        ReviewComment[]
+
+  @@unique([userId, movieId])
+  @@index([movieId])
+  @@index([userId])
+}
+
+model ReviewLike {
+  id        String   @id @default(uuid()) @db.Uuid
+  reviewId  String   @db.Uuid
+  userId    Int
+  createdAt DateTime @default(now())
+  review    Review   @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([reviewId, userId])
+  @@index([userId])
+}
+
+model ReviewComment {
+  id              String          @id @default(uuid()) @db.Uuid
+  reviewId        String          @db.Uuid
+  userId          Int
+  body            String          @db.Text
+  parentCommentId String?         @db.Uuid
+  isDeleted       Boolean         @default(false)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  review          Review          @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  parentComment   ReviewComment?  @relation("CommentReplies", fields: [parentCommentId], references: [id], onDelete: Cascade)
+  replies         ReviewComment[] @relation("CommentReplies")
+
+  @@index([reviewId])
+  @@index([userId])
+  @@index([parentCommentId])
+}
+
+model List {
+  id          String      @id @default(uuid()) @db.Uuid
+  userId      Int
+  name        String
+  description String?     @db.Text
+  isPrivate   Boolean     @default(false)
+  isSystem    Boolean     @default(false)
+  systemType  String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movies      ListMovie[]
+
+  @@unique([userId, systemType])
+  @@index([userId])
+}
+
+model ListMovie {
+  id        String   @id @default(uuid()) @db.Uuid
+  listId    String   @db.Uuid
+  movieId   String   @db.Uuid
+  addedAt   DateTime @default(now())
+  sortOrder Int?
+  notes     String?  @db.Text
+  list      List     @relation(fields: [listId], references: [id], onDelete: Cascade)
+  movie     Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
+
+  @@unique([listId, movieId])
+  @@index([movieId])
+}
+
+model Follow {
+  followerId  Int
+  followingId Int
+  createdAt   DateTime @default(now())
+  follower    User     @relation("Following", fields: [followerId], references: [id], onDelete: Cascade)
+  following   User     @relation("Followers", fields: [followingId], references: [id], onDelete: Cascade)
+
+  @@id([followerId, followingId])
+  @@index([followingId])
+}
+
+model ActivityFeed {
+  id           String   @id @default(uuid()) @db.Uuid
+  actorId      Int
+  activityType String
+  targetType   String
+  targetId     String
+  metadata     Json?
+  createdAt    DateTime @default(now())
+  actor        User     @relation("ActivityActor", fields: [actorId], references: [id], onDelete: Cascade)
+
+  @@index([actorId])
+  @@index([createdAt])
+}
+
+model Favorite {
+  id         String   @id @default(uuid()) @db.Uuid
+  userId     Int
+  provider   String   @db.VarChar(30)
+  externalId String   @db.VarChar(255)
+  mediaType  String   @db.VarChar(20)
+  title      String   @db.VarChar(500)
+  poster     String?  @db.Text
+  subtitle   String?  @db.VarChar(500)
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, provider, externalId])
+  @@index([userId])
+  @@index([userId, mediaType])
+  @@map("favorites")
+}

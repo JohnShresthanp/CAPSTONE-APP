@@ -1,0 +1,10 @@
+node_modules/
+backend/.env
+frontend/.env
+dist/
+.next/
+*.log
+backend/uploads/avatars/*
+backend/uploads/posters/*
+!backend/uploads/avatars/.gitkeep
+!backend/uploads/posters/.gitkeep
